@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wtsupp - Message privately</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f0f0;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #25D366;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #25D366;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-login {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn-login:hover {
+            background: #f5f5f5;
+        }
+
+        .btn-download {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background: #20c157;
+        }
+
+        /* Main Content */
+        .main-section {
+            background: linear-gradient(135deg, #8B9DC3 0%, #6B8CAE 100%);
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .hero-note {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Chat Interface */
+        .chat-interface {
+            position: relative;
+            max-width: 500px;
+            margin-left: auto;
+        }
+
+        .chat-bubbles {
+            position: relative;
+            z-index: 2;
+        }
+
+        .message-bubble {
+            background: white;
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            max-width: 280px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .message-1 {
+            margin-left: auto;
+            margin-right: 40px;
+        }
+
+        .message-1 .message-text {
+            text-align: left;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .message-time {
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+        }
+
+        .message-heart {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .voice-message {
+            background: white;
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            max-width: 280px;
+            margin-left: 60px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .voice-play {
+            width: 32px;
+            height: 32px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .voice-waveform {
+            flex: 1;
+            height: 20px;
+            background: linear-gradient(to right, #25D366 30%, #ddd 30%);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .voice-time {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .voice-avatar {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23ddd"/><circle cx="50" cy="40" r="15" fill="%23666"/><ellipse cx="50" cy="70" rx="20" ry="15" fill="%23666"/></svg>');
+            background-size: cover;
+        }
+
+        .photo-message {
+            background: white;
+            border-radius: 20px;
+            padding: 4px;
+            margin: 16px 0;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .coffee-emojis {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 48px;
+            z-index: 3;
+        }
+
+        /* Background Elements */
+        .background-woman {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect width="400" height="600" fill="%23000" opacity="0.1"/><circle cx="200" cy="300" r="100" fill="%23000" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .content-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .chat-interface {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .nav-buttons {
+                gap: 8px;
+            }
+            
+            .btn-download {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">W</div>
+                <span class="logo-text">wtsupp</span>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#">Features ▼</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">For Business</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="btn-login">Log in ▶</a>
+                    <a href="#" class="btn-download">Download ⬇</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <div class="background-woman"></div>
+        <div class="content-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Message<br>privately</h1>
+                <p class="hero-subtitle">Simple, reliable, private messaging and calling for free*, available all over the world.</p>
+                <p class="hero-note">* Data charges may apply. Contact your provider for details.</p>
+            </div>
+            
+            <div class="chat-interface">
+                <div class="coffee-emojis">☕❤️</div>
+                <div class="chat-bubbles">
+                    <div class="message-bubble message-1">
+                        <div class="message-text">Good morning mom 😊☕</div>
+                        <div class="message-time">11:54</div>
+                        <div class="message-heart">❤️</div>
+                    </div>
+                    
+                    <div class="voice-message">
+                        <div class="voice-play">▶</div>
+                        <div class="voice-waveform"></div>
+                        <div class="voice-time">0:03</div>
+                        <div class="voice-avatar"></div>
+                    </div>
+                    
+                    <div class="photo-message">
+                        <div class="photo-placeholder">📷</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

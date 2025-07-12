@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f9fc;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-container {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 90%;
+  max-width: 900px;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.left-panel h1 {
+  color: #1a8efd;
+  margin-bottom: 20px;
+}
+
+.left-panel select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.left-panel button {
+  background: #1a8efd;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.left-panel button:hover {
+  background: #006fd3;
+}
+
+.right-panel {
+  text-align: center;
+  border-left: 1px solid #eee;
+}
+
+.right-panel img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 4px solid #1a8efd;
+}
+
+.right-panel h2 {
+  font-size: 18px;
+  color: #333;
+}
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1a8efd;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #006fd3;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+  }
+
+  .right-panel {
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+}

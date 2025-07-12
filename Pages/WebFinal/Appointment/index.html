@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment Management</title>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/services.css">
+  <link rel="stylesheet" href="./css/docdetail.css">
+</head>
+
+<body>
+
+  <!-- ✅ NAVBAR SECTION START -->
+
+<header class="navbar-section">
+  <h1 class="navbar-title">
+    <a href="/">Doctor Cares<span class="navbar-sign"></span></a>
+  </h1>
+
+  <ul class="navbar-items">
+    <li><a href="#home" class="navbar-links">Home</a></li>
+    <li><a href="#services" class="navbar-links">Services</a></li>
+    <li><a href="#about" class="navbar-links">About</a></li>
+    <li><a href="#review" class="navbar-links">Reviews</a></li>
+    <li><a href="#doctor" class="navbar-links">Doctors</a></li>
+    <li><a href="#contact" class="navbar-links">Contact</a></li>
+
+    <!-- ✅ Login & Logout buttons -->
+    <li id="loginBtn"><a href="login.html" class="navbar-btn">Log In</a></li>
+    <li id="logoutBtn" style="display: none;"><a href="#" class="navbar-btn" onclick="logout()">Logout</a></li>
+  </ul>
+</header>
+
+
+  <!-- ✅ NAVBAR SECTION END -->
+
+  <!-- HOME SECTION -->
+  <section id="home" class="home">
+    <div class="row">
+      <div class="images">
+        <img src="./images/home.png" alt="">
+      </div>
+      <div class="content">
+        <h1><span>Stay</span> Safe, <span>Stay</span> Healthy.</h1>
+        <p>We provide top-tier medical services to help you and your loved ones stay healthy and protected every day.</p>
+        <a href="book.html"><button class="button">Book Appointment</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES section placeholder -->
+
+  <section id="services" class="services">
+  <div class="service-details">
+    <h2>our services</h2>
+
+    <div class="service-box">
+      <h3>general consultation</h3>
+      <p>We offer expert general health consultations by certified professionals to ensure your well-being and peace of mind.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>emergency care</h3>
+      <p>24/7 emergency services are available to handle urgent and life-threatening conditions promptly and efficiently.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>free health checkups</h3>
+      <p>We conduct regular free health checkup camps for early detection and prevention of diseases in our community.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>online appointments</h3>
+      <p>Book appointments online with your preferred doctor at your convenience through our seamless booking system.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>pharmacy services</h3>
+      <p>Our in-house pharmacy provides genuine medicines at affordable rates with complete guidance from trained pharmacists.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h1 class="heading">about our facility</h1>
+    <h3 class="title">learn and explore our facility</h3>
+    <div class="box-container">
+      <div class="box">
+        <div class="images"><img src="./images/about-1.png" alt=""></div>
+        <div class="content">
+          <h3>ambulance services</h3>
+          <p>Our fully-equipped ambulances ensure quick response and immediate medical attention during emergencies.</p>
+          <a href="servicesdetail.html"><button class="button">learn more</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="images"><img src="./images/about-2.png" alt=""></div>
+        <div class="content">
+          <h3>emergency rooms</h3>
+          <p>We operate 24/7 emergency rooms with experienced staff ready to handle any critical medical situation.</p>
+          <a href="servicesdetail.html"><button class="button">learn more</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="images"><img src="./images/about-3.png" alt=""></div>
+        <div class="content">
+          <h3>free check-ups</h3>
+          <p>We offer free routine check-ups to promote early diagnosis and better preventive healthcare for everyone.</p>
+          <a href="servicesdetail.html"><button class="button">learn more</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR SECTION -->
+  <section id="doctor" class="card">
+    <div class="container">
+      <h1 class="heading">doctors</h1>
+      <h3 class="title">our professional doctors</h3>
+      <div class="box-container">
+        <div class="box">
+          <img src="./images/doctor-1.jpg" alt="">
+          <div class="content">
+            <h2>john doe</h2>
+            <p>professional</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="./images/doctor-2.jpg" alt="">
+          <div class="content">
+            <h2>john doe</h2>
+            <p>professional</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="./images/doctor-3.jpg" alt="">
+          <div class="content">
+            <h2>john doe</h2>
+            <p>professional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <a href="doctordetail.html"><button class="button">View Details</button></a>
+    </div>
+  </section>
+
+  <!-- REVIEW SECTION -->
+  <section id="review" class="review">
+    <h1 class="heading">our patient review</h1>
+    <h3 class="title">what patient says about us</h3>
+    <div class="box-container">
+      <div class="box">
+        <i class="fas fa-quote-left"></i>
+        <p>The staff was incredibly professional and attentive throughout my treatment. Highly recommended!</p>
+        <div class="images">
+          <img src="./images/img-1.jpg" alt="">
+          <div class="info">
+            <h3>john doe</h3>
+            <span>date : 11 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <i class="fas fa-quote-left"></i>
+        <p>Thanks to their timely diagnosis, I received the right care at the right moment. Excellent service!</p>
+        <div class="images">
+          <img src="./images/img-2.jpg" alt="">
+          <div class="info">
+            <h3>john doe</h3>
+            <span>date : 11 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <i class="fas fa-quote-left"></i>
+        <p>Clean facility, kind doctors, and smooth appointment process. Truly a comforting experience.</p>
+        <div class="images">
+          <img src="./images/img-3.jpg" alt="">
+          <div class="info">
+            <h3>john doe</h3>
+            <span>date : 11 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+<section id="contact" class="contact">
+  <h1 class="heading">Contact Us</h1>
+  <h3 class="title">You can talk to us any time</h3>
+
+  <div class="row">
+    <div class="images">
+      <img src="./images/form.png" alt="Contact Image" />
+    </div>
+
+    <div class="form-container">
+      <form id="contactForm">
+        <input type="text" name="name" id="name" placeholder="Full Name" required />
+        <input type="email" name="email" id="email" placeholder="Enter your email" required />
+        <input type="tel" name="phone" id="phone" placeholder="Phone" pattern="^[0-9]{10,15}$" required />
+        <textarea name="message" id="message" placeholder="Message" required></textarea>
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+  </div>
+</section>
+
+                       <!--Contact forms end-->
+
+             <!-- Contact Form Submission Script -->
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      alert(result.message);
+      form.reset();
+    } catch (error) {
+      alert("Error sending form. Try again.");
+    }
+  });
+</script>
+
+
+
+  <!-- FOOTER SECTION -->
+  <section class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h2 class="footer-logo"><span>D</span>octors <span>C</span>ares</h2>
+        <p>Your health is our priority. We’re here to care for you with dedication and professionalism.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="links-row">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#doctor">Doctors</a>
+          <a href="#review">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit">
+      &copy; 2025 <span>DoctorsCares</span> | All Rights Reserved.
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+ 
+<script>
+  // Check login status
+  const user = localStorage.getItem("user");
+
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (user) {
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "block";
+  } else {
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
+  }
+
+  // Logout Function
+  function logout() {
+    localStorage.removeItem("user");
+    alert("You have been logged out.");
+    window.location.href = "index.html"; // Redirect to home
+  }
+</script>
+
+</body>
+
+</html>

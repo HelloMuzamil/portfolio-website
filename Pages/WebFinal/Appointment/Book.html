@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Doctor</title>
+
+  <link rel="stylesheet" href="./css/book.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+
+  <div class="booking-container">
+    <!-- LEFT SIDE: Selection -->
+    <div class="left-panel">
+      <h1>Select a Doctor</h1>
+
+      <!-- 👇 Welcome & Logout -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <span id="welcomeText"></span>
+        <button onclick="logout()" style="background: red; color: white; padding: 6px 12px; border: none; border-radius: 5px;">Logout</button>
+      </div>
+
+      <select id="doctorSelect" onchange="updateDoctorInfo()">
+        <option value="" disabled selected>Select a doctor</option>
+        <option value="dr-john">Dr. John Doe – Cardiologist</option>
+        <option value="dr-jane">Dr. Jane Smith – Dermatologist</option>
+        <option value="aurangzaib">Dr. Ali raza – Orthopedic Surgeon</option>
+      </select>
+
+      <button onclick="openCalendly()">Book Now</button>
+    </div>
+    
+    <!-- RIGHT SIDE: Doctor Info -->
+    <div class="right-panel" id="doctorInfo">
+      <img src="./images/doctor-1.jpg" alt="Doctor" id="doctorImage">
+      <h2 id="doctorName">Select a doctor</h2>
+      <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+  </div>
+  
+
+  <script>
+    // ✅ Authentication Check on page load
+    window.onload = function () {
+      const user = localStorage.getItem("user");
+      if (!user) {
+        alert("Please login first to book an appointment!");
+        window.location.href = "login.html";
+        return;
+      } else {
+        document.getElementById("welcomeText").innerText = `Welcome, ${user}`;
+      }
+    };
+
+    // ✅ Logout function
+    function logout() {
+      if (confirm("Are you sure you want to logout?")) {
+        localStorage.removeItem("user");
+        alert("You have been logged out.");
+        window.location.href = "login.html";
+      }
+    }
+
+    // ✅ Doctors data
+    const doctors = {
+      "dr-john": {
+        name: "Dr. John Doe – Cardiologist",
+        img: "./images/doctor-1.jpg",
+        calendly: "https://calendly.com/aurangzaibnasir986/meeting-with-dr-john-doe"
+      },
+      "dr-jane": {
+        name: "Dr. Jane Smith – Dermatologist",
+        img: "./images/doctor-2.jpg",
+        calendly: "https://calendly.com/aurangzaibnasir986/30min"
+      },
+      "aurangzaib": {
+        name: "Aurangzaib Nasir – General",
+        img: "./images/doctor-3.jpg",
+        calendly: "https://calendly.com/aurangzaibnasir986/meeting-with-dr-ali-raza"
+      }
+    };
+
+    // ✅ Update selected doctor info
+    function updateDoctorInfo() {
+      const key = document.getElementById("doctorSelect").value;
+      const doc = doctors[key];
+      document.getElementById("doctorImage").src = doc.img;
+      document.getElementById("doctorName").textContent = doc.name;
+    }
+
+    // ✅ Open Calendly popup (with auth check again)
+    function openCalendly() {
+      const user = localStorage.getItem("user");
+      if (!user) {
+        alert("Please login first to book an appointment!");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const key = document.getElementById("doctorSelect").value;
+      if (!key) {
+        alert("Please select a doctor.");
+        return;
+      }
+
+      Calendly.initPopupWidget({ url: doctors[key].calendly });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin: 0;
+    padding: 0;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+}
+.nav{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 0 20px;
+    box-sizing: border-box;
+}
+img{
+    height: 45px;
+ 
+    margin-left: 20px;
+}
+h1,h5{
+    color: white;
+    font-weight: 400;
+    
+}
+
+.nav-part2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.nav i{
+    margin-left: 30px;
+}
+.search i {
+    color: white;
+     margin-right: 70px;
+}
+#line{
+    height: 2px;
+    width: 90px;
+    background-color: red;
+}
+.content{
+    height: calc(100% - 80px);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+.left{
+    width: 36%;
+    height: 100%;
+    padding: 120px 50px;
+    box-sizing: border-box;
+}
+.right{
+    width: 36%;
+    height: 100%;
+  
+}
+.centre{
+    width: 26%;
+    height: 100%;
+    padding-top: 15px;
+}
+.left h1{
+    color: white;
+    font-size: 40px;
+    line-height: 60px; 
+    font-weight: 800;
+  
+}
+.left span{
+    color: red;
+    font-weight: 600;
+  
+}
+.left p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 15px;
+    
+}
+.left button{
+    height: 45px;
+    width: 150px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+  
+}
+.centrebg{
+    height: 95%;
+    width: 100%;
+    background-color: rgb(97, 21, 211);
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;  
+    background-image: url('neonimage.jpeg');
+  
+
+
+    
+}
+.content>img{
+    height: 100%;
+    position: absolute;
+    left: 22%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.right {
+    width: 36%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    padding: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightelemtns {
+    /* width: 90%; */
+    background-color: rgba(15, 13, 13, 0.9); /* Red with slight opacity */
+    /* padding: 20px; */
+    border-radius: 15px;
+
+}
+
+/* Make Description and Nutrients text grey with opacity */
+.elem1 h1 {
+    color: rgba(200, 200, 200, 0.8); /* Light grey with opacity */
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-transform: capitalize;
+}
+
+/* Icon remains white for contrast */
+.elem1 i {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Ingredients title remains white, but the paragraph starts from a new line */
+.elem2 h1 {
+    color: white;
+    font-size: 29px;
+    font-weight: bold;
+    padding: 15px 0;
+    text-transform: capitalize;
+
+}
+
+.elem2 p {
+    color: rgba(200, 200, 200, 0.8);
+  
+    font-size: 14px;
+    margin-top: 15px;
+    opacity: 0.8;
+    display: block; /* Ensures the paragraph starts on a new line */
+    
+}
+
+/* ====== Navigation Animation ====== */
+.nav h5 {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav h5:hover {
+    color: red;
+}
+
+/* ====== Button Animation ====== */
+.left button {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.left button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+}
+
+/* ====== Fade-in Animation for Content ====== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left h1,
+.left p,
+.left button {
+    animation: fadeUp 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.left h1 {
+    animation-delay: 0.2s;
+}
+
+.left p {
+    animation-delay: 0.4s;
+}
+
+.left button {
+    animation-delay: 0.6s;
+}
+
+/* ====== Bottle Shake Effect ====== */
+
+
+/* ====== Right Section Slide-in Effect ====== */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right {
+    animation: slideInRight 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* ====== Ingredients Expand Effect ====== */
+.elem2 p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.elem2 h1:hover p {
+    max-height: 100px;
+}
+
