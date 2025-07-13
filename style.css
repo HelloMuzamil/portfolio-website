@@ -207,7 +207,7 @@ a{
 
 .circle:nth-child(2) {
     border: 0.1rem solid white;
-    background-image: url(./images/Pic-min.png);
+    background-image: url(./images/Pic-min.webp);
     width: 25rem;
     background-size: 100%;
     background-repeat: no-repeat;
