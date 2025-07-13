@@ -4,64 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muzammil Iqbal - Web Developer</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="maincontainer">
-      <div class="nav">
+      <!-- Navigation -->
+      <nav class="nav">
         <div class="logo">MI</div>
         <button class="mobile-menu-btn"></button>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
+      </nav>
 
       <!-- Home Section -->
       <section id="home">
         <div class="left-container">
-          <div class="icon">
-
-              <a href="https://www.facebook.com/mianmuzamil.miqbal" target="_blank"><i class="ri-facebook-fill fb"></i></a>
-
-
-            <a href="https://twitter.com/MianMuzamil" target="_blank"><i class="ri-twitter-fill"></i></a>
-
-            <a
-              href="https://www.instagram.com/mianmuzamil.miqbal"
-              target="_blank"
-              ><i class="ri-instagram-fill ig"></i
-            ></a>
-
-            <a
-              href="https://www.linkedin.com/in/muzamiliqbal1122"
-              target="_blank"
-              ><i class="ri-linkedin-fill li"></i
-            ></a>
-
-            <a href="https://github.com/HelloMuzamil" target="_blank"
-              ><i class="ri-github-fill"></i
-            ></a>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/mianmuzamil.miqbal" target="_blank">
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a href="https://twitter.com/MianMuzamil" target="_blank">
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/mianmuzamil.miqbal" target="_blank">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/muzamiliqbal1122" target="_blank">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="https://github.com/HelloMuzamil" target="_blank">
+              <i class="ri-github-fill"></i>
+            </a>
           </div>
           <div class="content">
             <h2>Hi, I'm <span>Muzammil Iqbal</span></h2>
             <h1>Web Developer</h1>
             <p>
-              Passionate web developer specializing in responsive<br />
-              design, interactive UIs, and modern web technologies. Let's build
+              Passionate web developer specializing in responsive design, 
+              interactive UIs, and modern web technologies. Let's build
               something amazing together.
             </p>
-            <div class="button">
-              <a href="#contact"><button>Hire Me</button></a>
-              <a href="#projects"><button>Projects</button></a>
+            <div class="cta-buttons">
+              <a href="#contact" class="btn">Hire Me</a>
+              <a href="#projects" class="btn">View Projects</a>
             </div>
           </div>
         </div>
@@ -79,9 +70,8 @@
           <div class="about-content">
             <div class="about-image">
               <div class="image-container">
-                <!-- Placeholder for your image -->
                 <div class="placeholder-image">
-                  <img src="./images/Pic.png" alt="Muzammil Iqbal" />
+                  <img src="./images/Pic-min.png" alt="Muzammil Iqbal" />
                 </div>
               </div>
             </div>
@@ -140,28 +130,21 @@
                 <i class="ri-code-line"></i>
               </div>
               <h3>Web Development</h3>
-              <p>
-                Custom websites built with clean code and modern best practices.
-              </p>
+              <p>Custom websites built with clean code and modern best practices.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="ri-smartphone-line"></i>
               </div>
               <h3>Responsive Design</h3>
-              <p>
-                Websites that look great on all devices, from mobile to desktop.
-              </p>
+              <p>Websites that look great on all devices, from mobile to desktop.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="ri-paint-brush-line"></i>
               </div>
               <h3>UI/UX Design</h3>
-              <p>
-                Intuitive interfaces that enhance user experience and
-                engagement.
-              </p>
+              <p>Intuitive interfaces that enhance user experience and engagement.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
@@ -181,96 +164,65 @@
           <div class="projects-grid">
             <div class="project-card">
               <div class="project-image">
-                <img src="./images/Design1.PNG" alt="Project 1" />
+                <img src="./images/Design1.PNG" alt="CocaCola Landing Page" />
               </div>
               <div class="project-info">
                 <h3>CocaCola Landing Page</h3>
-                <p>
-                  A modern landing page showcasing CocaCola's latest products
-                  and promotions.
-                </p>
+                <p>A modern landing page showcasing CocaCola's latest products and promotions.</p>
                 <div class="project-tags">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-                <a
-                  href="./Pages/Coc'sLandingPage/index.html"
-                  class="btn"
-                  target="_blank"
-                  >View Project</a
-                >
+                <a href="./Pages/Coc'sLandingPage/index.html" class="btn" target="_blank">View Project</a>
               </div>
             </div>
 
             <div class="project-card">
               <div class="project-image">
-                <img src="./images/Design4.png" alt="Project 4" />
+                <img src="./images/Design4.png" alt="Online Booking System" />
               </div>
               <div class="project-info">
                 <h3>Online Booking System</h3>
-                <p>
-                  A full-stack web app for booking doctor appointments online.
-                  It uses Calendly for scheduling and email confirmations.
-                  Features secure login/signup and contact forms built with
-                  Node.js, Express, MongoDB, HTML, CSS, and JavaScript.
-                </p>
+                <p>A full-stack web app for booking doctor appointments online with secure login/signup and contact forms.</p>
                 <div class="project-tags">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
-                  <span>NodeJs</span>
+                  <span>Node.js</span>
                   <span>Express</span>
                   <span>MongoDB</span>
                 </div>
-                <a
-                  href="./Pages/WebFinal/Appointment/index.html"
-                  class="btn"
-                  target="_blank"
-                  >View Project</a
-                >
+                <a href="./Pages/WebFinal/Appointment/index.html" class="btn" target="_blank">View Project</a>
               </div>
             </div>
 
             <div class="project-card">
               <div class="project-image">
-                <img src="./images/Design2.PNG" alt="Project 2" />
+                <img src="./images/Design2.PNG" alt="Nike Landing Page" />
               </div>
               <div class="project-info">
                 <h3>Nike Landing Page</h3>
-                <p>
-                  A modern landing page showcasing Nike's latest products and
-                  promotions.
-                </p>
-
+                <p>A modern landing page showcasing Nike's latest products and promotions.</p>
                 <div class="project-tags">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-                <a
-                  href="./Pages/NikeLandingPage/Nike.html"
-                  class="btn"
-                  target="_blank"
-                  >View Project</a
-                >
+                <a href="./Pages/NikeLandingPage/Nike.html" class="btn" target="_blank">View Project</a>
               </div>
             </div>
+
             <div class="project-card">
               <div class="project-image">
-                <img src="./images/Design3.PNG" alt="Project 3" />
+                <img src="./images/Design3.PNG" alt="WhatsApp Clone" />
               </div>
               <div class="project-info">
-                <h3>Whatsupp Clone</h3>
-                <p>A messaging app Ui/Ux design.</p>
+                <h3>WhatsApp Clone</h3>
+                <p>A messaging app UI/UX design with modern interface.</p>
                 <div class="project-tags">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-                <a
-                  href="./Pages/WatsuppClone/index.html"
-                  class="btn"
-                  target="_blank"
-                  >View Project</a
-                >
+                <a href="./Pages/WatsuppClone/index.html" class="btn" target="_blank">View Project</a>
               </div>
             </div>
           </div>
@@ -304,37 +256,26 @@
                   <p>+92********</p>
                 </div>
               </div>
-              <div class="social-links">
-                <a href="#"><i class="ri-facebook-fill"></i></a>
-                <a href="#"><i class="ri-twitter-fill"></i></a>
-                <a href="#"><i class="ri-instagram-fill"></i></a>
-                <a href="#"><i class="ri-linkedin-fill"></i></a>
-                <a href="#"><i class="ri-github-fill"></i></a>
-              </div>
             </div>
             <div class="contact-form">
               <form>
                 <div class="input-row">
                   <div class="input-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your Name" />
+                    <input type="text" id="name" placeholder="Your Name" required />
                   </div>
                   <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Your Email" />
+                    <input type="email" id="email" placeholder="Your Email" required />
                   </div>
                 </div>
                 <div class="input-group">
                   <label for="subject">Subject</label>
-                  <input type="text" id="subject" placeholder="Subject" />
+                  <input type="text" id="subject" placeholder="Subject" required />
                 </div>
                 <div class="input-group">
                   <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Your Message"
-                  ></textarea>
+                  <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
               </form>
@@ -347,10 +288,6 @@
       <footer>
         <div class="footer-content">
           <p>&copy; 2025 Muzammil Iqbal. All Rights Reserved.</p>
-          <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
         </div>
       </footer>
     </div>
